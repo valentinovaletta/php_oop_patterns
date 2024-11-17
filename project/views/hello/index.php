@@ -1,4 +1,1 @@
-Все работает!
-<?php
-phpinfo(); 
-?>
+It works

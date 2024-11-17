@@ -13,7 +13,7 @@ class MessageFactory {
     public function __construct(array $params)
     {
       $this->command = preg_replace('/\//', '_', $params['message']['text']??'sdsfsdf');
-      $this->params['chatId'] = $params['message']['chat']['id'];
+      $this->params['chatId'] = $params['message']['chat']['id']??0;
     }
 
     public function create() 
