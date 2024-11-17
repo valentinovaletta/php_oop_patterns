@@ -7,10 +7,10 @@ use Project\Classes\MessageFactory\Messages\MessageDefault;
 class MessageFactory {
 
     private $namespace = "Project\Classes\MessageFactory\Messages\\";
-    private $command;
-    private $params;
+    private string $command;
+    private array $params;
 
-    public function __construct($params)
+    public function __construct(array $params)
     {
       $this->command = preg_replace('/\//', '_', $params['message']['text']??'sdsfsdf');
       $this->params['chatId'] = $params['message']['chat']['id'];

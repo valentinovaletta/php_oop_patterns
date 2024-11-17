@@ -22,7 +22,7 @@
 			$tg = new TelegramSDK(getenv('TELEGRAM_BOT_TOKEN'));
 			$tgMessage = $tg->sendMessage('sendMessage', ['chat_id' => $msObject->getChatId(), 'text' => $msObject->getMessage()]);
 
-			return $this->render('hello/index', $params = ['tgMessage' => $tgMessage, 'message' => $msObject]);
+			return $this->render('telegram/index', $params = ['tgMessage' => $tgMessage, 'message' => $msObject]);
 		}
 	}
 

@@ -18,7 +18,7 @@
 		if (file_exists($path)) {
 			require_once $path;
 			
-			if (class_exists($class, false)) {
+			if (class_exists($class, false) || interface_exists($class, false)) {
 				return true;
 			} else {
 				throw new \Exception("Класс $class не найден в файле $path. Проверьте правильность написания имени класса внутри указанного файла.");
