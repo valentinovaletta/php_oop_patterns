@@ -2,6 +2,7 @@
 
 namespace Project\Classes\MessageFactory;
 
+use Project\Classes\MessageFactory\Messages\IMessage;
 use Project\Classes\MessageFactory\Messages\MessageDefault;
 
 class MessageFactory {
@@ -16,7 +17,7 @@ class MessageFactory {
       $this->params['chatId'] = $params['message']['chat']['id']??0;
     }
 
-    public function create() 
+    public function create() : IMessage
     {
       $className = ucfirst($this->command);
       $messageFile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "project/classes/messagefactory/messages/Message$className.php";
