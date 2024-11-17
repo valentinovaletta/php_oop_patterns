@@ -12,6 +12,10 @@
 				return $this->render('telegram/error', $params);
 			}
 
+			// Here is an abstract method pattern that creates classes according to a message that we receive from telegram bot.
+			// You can add as many messages as you want. Just add a message file into "project/messagefactory/messages" folder.
+			// Message file must have name starting with "Message" plus command that telegram bot can send us.
+			// Commands that starts from / must follow "Message_command" pattern in the name. 
 			$ms = new MessageFactory($params);
 			$msObject = $ms->create();
 

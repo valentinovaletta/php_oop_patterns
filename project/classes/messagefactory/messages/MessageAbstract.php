@@ -2,12 +2,11 @@
 
 namespace Project\Classes\MessageFactory\Messages;
 
-abstract class MessageAbstract {
+abstract class MessageAbstract implements IMessage{
 
-    protected $params;
-    protected $chatId;
-    protected $message;
-
+    protected array $params;
+    protected int $chatId;
+    protected string $message;
 
     public function __construct($params)
     {
@@ -15,16 +14,17 @@ abstract class MessageAbstract {
         $this->chatId = $params['chatId'];
     }
 
-    public function getchatId()
+    public function getchatId() : Int
     {
         return $this->chatId;
     }
-    public function getMessage()
+    public function getMessage() : String
     {
         return $this->message;
     }
 
-    public function setMessage($message){
+    public function setMessage($message) : Void
+    {
         $this->message = $message;
     }
 
