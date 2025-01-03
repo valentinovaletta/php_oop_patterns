@@ -12,9 +12,9 @@
 				return $this->render('telegram/error', array_merge($params, ['error' => 'incorrect telegram auth code']));
 			}
 			if (!isset($params['message']['chat']['id']) && !isset($params['message']['text'])) {
-				return $this->render('telegram/error', array_merge($params, ['error' => 'undefind telegram chat id or telegram message']));
+				return $this->render('telegram/error', array_merge($params, ['error' => 'undefined telegram chat id or telegram message']));
 			}
-
+						
 			// Here is an abstract method pattern that creates classes according to a message that we receive from telegram bot.
 			// You can add as many messages as you want. Just add a message file into "project/messagefactory/messages" folder.
 			// Message file must have name starting with "Message" plus command that telegram bot can send us.

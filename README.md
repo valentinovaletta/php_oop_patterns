@@ -1,4 +1,4 @@
-Telegram callback messge example:
+Telegram callback message example:
 
 {
 	"var1":"TelegramCode",

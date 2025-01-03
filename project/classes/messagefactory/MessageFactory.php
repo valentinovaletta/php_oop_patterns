@@ -7,7 +7,7 @@ use Project\Classes\MessageFactory\Messages\MessageDefault;
 
 class MessageFactory {
 
-    private $namespace = "Project\Classes\MessageFactory\Messages\\";
+    private string $namespace = "Project\Classes\MessageFactory\Messages\\";
     private string $command;
     private array $params;
 
