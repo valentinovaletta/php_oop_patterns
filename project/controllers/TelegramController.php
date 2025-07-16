@@ -23,7 +23,7 @@
 			$msObject = $ms->create();
 
 			$tg = new TelegramSDK(getenv('TELEGRAM_BOT_TOKEN'));
-			$tgMessage = $tg->sendMessage('sendMessage', ['chat_id' => $msObject->getChatId(), 'text' => $msObject->getMessage()]);
+			$tgMessage = $tg->sendMessage('sendMessage', ['chat_id' => $msObject->getChatId(), 'text' => $msObject->getMessage(), 'reply_markup' => json_encode(["keyboard" => [["/start", "/test", "/hello"]],"resize_keyboard" => true,"one_time_keyboard" => true])]);
 
 			return $this->render('telegram/index', $params = ['tgMessage' => $tgMessage, 'message' => $msObject]);
 		}
